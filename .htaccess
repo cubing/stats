@@ -1,0 +1,29 @@
+DirectoryIndex index.php
+
+# use custom php.ini
+# <IfModule mod_suphp.c>
+# suPHP_ConfigPath /home/brest/brest.cubing.net
+# <Files php.ini>
+# order allow,deny
+# deny from all
+# </Files>
+# </IfModule>
+
+# allow php parsing in html
+# AddHandler application/x-httpd-php5 .php .html
+
+# forbid directory listing
+Options -Indexes
+
+# forbid hot-linking
+# RewriteEngine on
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^http://brest.cubing.net/.*$ [NC]
+# RewriteRule \.(gif|jpg|js|css)$ - [F]
+
+# error handling
+ErrorDocument 400 /errors/badrequest.html
+ErrorDocument 401 /errors/authreqd.html
+ErrorDocument 403 /errors/forbid.html
+ErrorDocument 404 /errors/notfound.html
+ErrorDocument 500 /errors/serverr.html
