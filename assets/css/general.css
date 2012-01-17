@@ -171,7 +171,6 @@ table td.body_outer {
 }
 
 h1, h2, h3, table caption, .caption {
-  text-align: center;
   padding: 0;
   margin: 0em 0;
   font-size: 1.2em;

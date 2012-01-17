@@ -1,5 +1,5 @@
 <?php
-$title = 'Men/Women per Country';
+$title = 'Men/Women per country';
 include('assets/templates/header.tpl.php');
 
 // build query
