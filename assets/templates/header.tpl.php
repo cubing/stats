@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>stats.cubing.com | <?php echo $title ?></title>
+    <title>stats.cubing.net | <?php echo $title ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="A collection of unofficial WCA statistics" />
     <meta name="keywords" content="WCA, World Cube Association, statistics, rubik, cube, rubik's cube, speedcubing, speedsolving" />

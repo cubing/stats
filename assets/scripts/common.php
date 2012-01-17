@@ -1,7 +1,6 @@
+<?php
 // common php functions
 // @require_once'd into assets/templates/header.tpl.php
-
-<?php
 
 // wrapper function for mysql query
 function dbQuery($query) {
@@ -16,6 +15,46 @@ function dbQuery($query) {
     return $result;
 }
 
+// wrapper function for mysql query
+function dbQueryHandle($query) {
+    $database="";
+    $username="";
+    $password="";
+    mysql_connect('mysql.stats.cubing.net', $username, $password) or die("Unable to connect to database");
+    @mysql_select_db($database) or die("Unable to select database");
+    mysql_query("SET NAMES 'utf8'") or die(mysql_error());
+    $result = mysql_query($query) or die(mysql_error());
+    mysql_close();
+    return $result;
+}
+
+// wrapper function for mysql query
+function dbCommand($query) {
+    $database="";
+    $username="";
+    $password="";
+    mysql_connect('mysql.stats.cubing.net', $username, $password) or die("Unable to connect to database");
+    @mysql_select_db($database) or die("Unable to select database");
+    mysql_query("SET NAMES 'utf8'") or die(mysql_error());
+    $result = mysql_query($query) or die(mysql_error());
+    mysql_close();
+    return $result;
+}
+
+// wrapper function for mysqli_real_query (to avoid DELIMITER bug)
+function mysqliQuery($query) {
+    $database="";
+    $username="";
+    $password="";
+    $link = mysqli_connect('mysql.stats.cubing.net', $username, $password, $database);
+    if (mysqli_connect_errno()) {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit();
+    }
+    mysqli_real_query($link, $query);
+}
+
+
 function writeOption($id, $name, $curId) {
   echo "<option ";
   if ($id == $curId)
@@ -27,12 +66,7 @@ function writeOption($id, $name, $curId) {
 
 // restrict to world championships
 function wc_str() {
-  return "         AND (competitionId = 'WC2011' OR
-         competitionId = 'WC2009' OR
-         competitionId = 'WC2007' OR
-         competitionId = 'WC2005' OR
-         competitionId = 'WC2003' OR
-         competitionId = 'WC1982')\n";
+  return "         AND competitionId in ('WC1982', 'WC2003', 'WC2005', 'WC2007', 'WC2009', 'WC2011')\n";
 }
 
 // only final round

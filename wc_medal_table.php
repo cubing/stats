@@ -28,9 +28,7 @@ include('assets/forms/submit.php');
 include('assets/forms/endform.php');
 
 // build query
-$query = "SELECT   personName,
-         personId,
-         personCountryId,
+$query = "SELECT   personId, personName, personCountryId,
          SUM(IF(pos = 1, 1, 0)) AS gold,
          SUM(IF(pos = 2, 1, 0)) AS silver,
          SUM(IF(pos = 3, 1, 0)) AS bronze,
@@ -40,12 +38,11 @@ FROM     Results
          JOIN Countries    ON Results.personCountryId = Countries.id\n";
 
 // WHERE
-$query .= "WHERE    TRUE\n";
+$query .= "WHERE    (roundId = 'f' OR roundId = 'c') AND best > 0 AND eventId != '333mbo'\n";
 $query .= regionId_str();
 $query .= eventId_str();
 $query .= wc_str();
 $query .= years_str();
-$query .= final_str();
 
 // group
 $group = $_GET['group'];
@@ -63,7 +60,7 @@ if ($order == 'total')
 if ($group == '' || $group == 'country')
   $query .= ", personCountryId";
 if ($group == 'person')
-  $query .= ", personId";
+  $query .= ", personName, personId";
 
 // build and submit query
 $result = dbQuery($query);
