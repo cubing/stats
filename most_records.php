@@ -22,10 +22,12 @@ $query = "SELECT   personId, personName, personCountryId,
          SUM(IF(regionalSingleRecord = 'NR', 1, 0)) singleNr,
          SUM(IF(regionalAverageRecord = 'NR', 1, 0)) averageNr,
          SUM(IF(regionalSingleRecord = 'NR', 1, 0) + IF(regionalAverageRecord = 'NR', 1, 0)) totalNr
-FROM     Results
-         JOIN Competitions ON Results.competitionId = Competitions.id
-         JOIN Countries    ON Results.personCountryId = Countries.id
-WHERE    (regionalSingleRecord in ('WR', 'AfR', 'AsR', 'ER', 'OcR', 'NAR', 'SAR') OR regionalAverageRecord in ('WR', 'AfR', 'AsR', 'ER', 'OcR', 'NAR', 'SAR'))\n";
+FROM     Results\n";
+if ($_GET['years'] != '')
+  $query .= "         JOIN Competitions ON Results.competitionId = Competitions.id\n";
+if ($_GET['regionId'] != '')
+  $query .="         JOIN Countries    ON Results.personCountryId = Countries.id\n";
+$query .= "WHERE    (regionalSingleRecord in ('WR', 'AfR', 'AsR', 'ER', 'OcR', 'NAR', 'SAR', 'NR') OR regionalAverageRecord in ('WR', 'AfR', 'AsR', 'ER', 'OcR', 'NAR', 'SAR', 'NR'))\n";
 $query .= eventId_str();
 $query .= regionId_str();
 $query .= years_str();
@@ -89,6 +91,7 @@ echo "</table";
 ?>
 
 <h2>MySQL Query</h2>
+<p>By Shotaro Makisumi</p>
 <pre><?php echo $query; ?></pre>
 
 <?php
