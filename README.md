@@ -15,6 +15,7 @@ Official statistics can be found on the WCA Statistics page. Although popular st
 # People
 ## Project manager
 - [Shotaro Makisumi](http://makisumi.com/)
+
 ## Contributors
 - [Lucas Garron](http://garron.us/)
 - [Stefan Pochmann](http://stefan-pochmann.info/)
