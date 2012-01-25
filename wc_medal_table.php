@@ -23,7 +23,7 @@ writeOption('person', 'Person', $curId);
 </select></label></div></td>
 
 <?php
-include('assets/forms/gold_total.php');
+include('assets/forms/order_by_medal.php');
 include('assets/forms/submit.php');
 include('assets/forms/endform.php');
 
@@ -52,11 +52,7 @@ if ($group == 'person')
   $query .= "GROUP BY personId\n";
 
 // order
-$order = $_GET['order'];
-if ($order == '' || $order == 'gold')
-  $query .= "ORDER BY gold DESC, silver DESC, bronze DESC";
-if ($order == 'total')
-  $query .= "ORDER BY total DESC, gold DESC, silver DESC, bronze DESC";
+$query .= "ORDER BY " . medal_str();
 if ($group == '' || $group == 'country')
   $query .= ", personCountryId";
 if ($group == 'person')

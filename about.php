@@ -14,11 +14,14 @@ include('assets/templates/header.tpl.php');
 <ul>
  <li><a href="http://makisumi.com/">Shotaro Makisumi</a>: creator, current <a href="https://github.com/cubing/stats">GitHub</a> project maintainer and webmaster</li>
  <li><a href="http://garron.us/">Lucas Garron</a>: cubing.net hub</li>
- <li>Contributors: Stefan Pochmann, Tim Reynolds, Alberto Burgos</li>
+ <li>Contributors: <a href="http://www.stefan-pochmann.info/">Stefan Pochmann</a>, Tim Reynolds, Alberto Burgos</li>
 </ul>
 
+<h2>How can I try out my own queries?</h2>
+<p>Download the <a href="http://worldcubeassociation.org/results/misc/export.html">WCA Database</a>. You'll need to search how to set up MySQL on your platform: <a href="https://www.google.com/search?q=mysql+windows">Windows</a>, <a href="https://www.google.com/search?q=mysql+mac">Mac</a>, <a href="https://www.google.com/search?q=mysql+ubuntu">Linux (Ubuntu)</a>.
+
 <h2>How can I contribute?</h2>
-<p>Please send MySQL/php statistics code to <a href="http://makisumi.com/contact.html">the webmaster</a>. For the more technologically savvy, feel free to fork the cubing/stats repo.</p>
+<p>Please send MySQL/php statistics code to <a href="http://makisumi.com/contact.html">the webmaster</a>. For the more technologically savvy, feel free to fork the <a href="http://github.com/cubing/stats">cubing/stats</a> GitHub repo.</p>
 
 <?php
 include('assets/templates/footer.tpl.php');
