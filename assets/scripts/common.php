@@ -100,6 +100,23 @@ function years_str() {
     return "         AND Competitions.year <= " . $years[1] . "\n";
 }
 
+function medal_str() {
+  $order = $_GET['order'];
+  switch($order) {
+    case 'total':
+      return "total DESC, gold DESC, silver DESC";
+      break;
+    case 'silver':
+      return "silver DESC, gold DESC, bronze DESC";
+      break;
+    case 'bronze':
+      return "bronze DESC, gold DESC, silver DESC";
+      break;
+    default: // this includes 'gold'
+      return "gold DESC, silver DESC, bronze DESC";
+  }
+}
+
 function personId_is_valid($personId) {
   return preg_match('/(1982|20[0-9][0-9])[A-Z][A-Z][A-Z][A-Z][0-9][0-9]/', $personId);
 }

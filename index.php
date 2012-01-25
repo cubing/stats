@@ -49,24 +49,14 @@ include('assets/templates/header.tpl.php');
   <li><a href="best_magicers_without_mmagic.php">Best Magicers without Master Magic result</a></li>
 </ul>
 
-<p>Working with small caveats:</p>
+<p>In progress:</p>
 <ul>
   <li><a href="result_frequency.php">Result Frequency (for region or for person)</a></li>
   <li><a href="time_range_frequency.php">Time Range Frequency (one competitor)</a></li>
-</ul>
-
-<p>Not working (written but waiting for Stefan)</p>
-<ul>
   <li><a href="faster_at_x_than_at_y.php">Faster than event x than at event y</a></li>
   <li><a href="faster_at_x_than_at_y.php">Faster than event x than at event y</a></li>
   <li><a href="average_over_single.php">Best average / best single</a></li>
 </ul>
-
-<h2>How can I try out my own queries?</h2>
-<p>Download the <a href="http://worldcubeassociation.org/results/misc/export.html">WCA Database</a>. You'll need to search how to set up MySQL on your platform: <a href="https://www.google.com/search?q=mysql+windows">Windows</a>, <a href="https://www.google.com/search?q=mysql+mac">Mac</a>, <a href="https://www.google.com/search?q=mysql+ubuntu">Linux (Ubuntu)</a>.
-
-<h2>How do I contribute?</h2>
-<p>We welcome user submissions of statistics generated using php and MySQL code. Please send them to <a href="http://makisumi.com/">the webmaster</a>.</p>
 
 <h2>Statistics on other websites</h2>
 <ul>
