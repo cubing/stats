@@ -8,7 +8,7 @@ include('assets/forms/beginform.php');
 include('assets/forms/eventId.php');
 include('assets/forms/regionId.php');
 include('assets/forms/years.php');
-include('assets/forms/gold_total.php');
+include('assets/forms/order_by_medal.php');
 include('assets/forms/submit.php');
 include('assets/forms/endform.php');
 
@@ -26,9 +26,9 @@ $query .= " where roundId in ('f','c')
 $query .= regionId_str();
 $query .= eventId_str();
 $query .= years_str();
-$query .= " group by personId, personName
- order by gold desc, silver desc, bronze desc, personName
- limit 100";
+$query .= " group by personId, personName\n";
+$query .= "ORDER BY " . medal_str() . ", personName\n";
+$query .= "LIMIT    100";
 
 // submit query
 $result = dbQuery($query);
