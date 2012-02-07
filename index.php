@@ -3,6 +3,8 @@ $title = 'Home';
 include('assets/templates/header.tpl.php');
 ?>
 
+<p>Currently using WCA results export of <b>February 3, 2012</b></p>
+
 <h2>Bests</h2>
 <ul>
   <li><a href="best_worst_result.php">Best worst result (single or average)</a></li>
