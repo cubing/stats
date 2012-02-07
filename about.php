@@ -7,6 +7,9 @@ include('assets/templates/header.tpl.php');
 
 <p>We take questions and requests on <a href="http://www.speedsolving.com/forum/showthread.php?34250-WCA-Statistics-Website">this Speedsolving Forums thread</a>.</p>
 
+<h2>I went to a competition. Why aren't my stats updated?</h2>
+<p>We currently don't have the time to upload the WCA results export every week. The <a href="index.php">top page</a> shows the date of the export being used. We won't let it get too behind, though.</p>
+
 <h2>Why an unofficial statistics website?</h2>
 <p>Although popular statistics may be incorporated into the official <a href="http://worldcubeassociation.org/results/statistics.php">WCA Statistics page</a>, some statistics are inherently unofficial, e.g. different proposed global ranking systems. The hope, moreover, is to encourage cubers, especially those without server access, to learn and experiment with php and MySQL.</p>
 
